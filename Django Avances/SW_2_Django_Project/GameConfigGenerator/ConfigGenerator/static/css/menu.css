@@ -1,0 +1,15 @@
+.container{
+    background: url('../img/background2.jpg') no-repeat;
+    background-size: cover;
+}
+.table{
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.imgs{
+    width: 100px;
+    height: 100px
+}
+

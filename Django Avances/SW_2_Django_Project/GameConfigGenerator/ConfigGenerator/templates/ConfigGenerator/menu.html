@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Doom Kingdom</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/menu.css">
+</head>
+<body class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img id="img" src="static/img/the_doom_kingdom.png">
+        </div>
+    </div>
+        <div class="row">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        {% for image in images %}
+                            <td><img src={{ image }}></td>
+                        {% endfor %}
+                    </tr>
+                    {% for array in info %}
+                        <tr>
+                            {% for data in array %}
+                                <td class={{ forloop.counter0}}>{{ data }}</td>
+                            {% endfor %}
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <td></td>
+                        {% for i in '1234' %}
+                        <td>
+                            <button class="btn btn-success" onclick="download('Character.txt', {{ forloop.counter }})">
+                                <span class="glyphicon glyphicon-download"></span>Download
+                            </button>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="static/javascript/menu.js"></script>
+</body>
+</html>
